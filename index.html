@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>tomo - Premium Social Fitness</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#D9FF00", // Acid Green
+                        "secondary": "#8B5CF6", // Electric Violet
+                        "background-dark": "#000000", // Pure Black
+                        "surface-dark": "#09090b", // Very dark zinc
+                        "border-dark": "#27272a", // Zinc-800
+                        "zinc-100": "#f4f4f5",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "sans": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "4xl": "2rem",
+                        "full": "9999px"
+                    },
+                    fontSize: {
+                        "7xl": ["4.5rem", { lineHeight: "0.95" }],
+                        "8xl": ["6rem", { lineHeight: "0.95" }],
+                        "9xl": ["8rem", { lineHeight: "0.9" }],
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .text-glow-green {
+            text-shadow: 0 0 20px rgba(217, 255, 0, 0.4);
+        }
+        .text-glow-violet {
+            text-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 30px rgba(217, 255, 0, 0.3);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            border-color: #27272a;}
+    </style>
+</head>
+<body class="bg-background-dark text-zinc-100 overflow-x-hidden selection:bg-primary selection:text-black antialiased">
+<div class="relative min-h-screen flex flex-col">
+<header class="fixed top-0 w-full z-50 border-b border-white/5 bg-background-dark/80 backdrop-blur-xl">
+<div class="max-w-[1400px] mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-2 group cursor-pointer">
+<span class="material-symbols-outlined text-primary text-3xl group-hover:rotate-12 transition-transform duration-300">
+                        bolt
+                    </span>
+<h2 class="text-white text-3xl font-black tracking-tighter lowercase">tomo</h2>
+</div>
+<a href="#waitlist-form" class="bg-primary hover:bg-[#b8d900] text-black font-extrabold text-sm uppercase tracking-wide px-6 py-3 rounded-full transition-all hover:scale-105 active:scale-95 shadow-[0_0_15px_rgba(217,255,0,0.3)] no-underline">
+                    Get Early Access
+                </a>
+</div>
+</header>
+<main class="flex-grow pt-28 pb-12">
+<div class="max-w-[1400px] mx-auto px-6">
+<div class="grid lg:grid-cols-2 gap-16 lg:gap-8 items-center py-12 lg:py-20 min-h-[80vh]">
+<div class="flex flex-col justify-center gap-8 relative z-10 order-2 lg:order-1">
+<div class="hidden lg:block absolute -top-20 -left-20 w-64 h-64 bg-secondary/10 rounded-full blur-[100px] pointer-events-none"></div>
+<h1 class="text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white uppercase break-words">
+                            Stop tracking <br/>
+<span class="text-zinc-600">in the dark.</span> <br/>
+                            Do it for <span class="text-primary text-glow-green">the squad.</span>
+</h1>
+<p class="text-xl text-zinc-400 font-medium max-w-lg leading-relaxed border-l-4 border-secondary pl-6">
+                            The only fitness app where your meals and workouts are verified by your friends. Snap, post, keep the streak alive.
+                        </p>
+<div class="max-w-lg w-full mt-4">
+<form id="waitlist-form" class="flex flex-col sm:flex-row gap-4">
+<input id="waitlist-email" name="email" required class="flex-1 bg-surface-dark border border-zinc-800 text-white text-lg rounded-xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent placeholder-zinc-600 transition-all font-medium" placeholder="your@email.com" type="email"/>
+<button id="waitlist-submit" class="bg-secondary hover:bg-violet-600 text-white font-bold px-8 py-4 rounded-xl transition-all hover:shadow-[0_0_20px_rgba(139,92,246,0.4)] active:scale-95 flex items-center justify-center gap-2 group whitespace-nowrap uppercase tracking-wider text-sm" type="submit">
+                                    Join Waitlist
+                                    <span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">
+                                        arrow_forward
+                                    </span>
+</button>
+</form>
+<p id="waitlist-feedback" class="mt-4 text-sm font-medium hidden"></p>
+<p class="mt-4 text-xs text-zinc-500 font-mono tracking-widest uppercase">
+<span class="w-2 h-2 bg-primary rounded-full inline-block mr-2 animate-pulse"></span> Limited spots available for Batch #04
+                            </p>
+</div>
+</div>
+<div class="relative w-full max-w-[420px] mx-auto lg:max-w-none lg:mx-0 flex justify-center lg:justify-end order-1 lg:order-2 perspective-1000 group">
+<div class="absolute inset-0 bg-gradient-to-tr from-secondary/30 to-primary/20 blur-[100px] rounded-full opacity-60 pointer-events-none"></div>
+<div class="relative w-[360px] h-[740px] bg-black border-[8px] border-zinc-900 rounded-[3rem] shadow-2xl overflow-hidden transform rotate-[-3deg] hover:rotate-0 transition-all duration-700 ease-out z-20">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 h-7 w-32 bg-zinc-900 rounded-b-3xl z-30"></div>
+<div class="h-full w-full bg-zinc-950 flex flex-col relative">
+<div class="px-6 pt-12 pb-4 flex justify-between items-center z-10 bg-gradient-to-b from-black/80 to-transparent">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full border border-zinc-700 overflow-hidden">
+<img alt="User avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCBLWBmBa24KkyJIg_EcAwYcHdQi69Y_GRbzHHiDyxfSmGGvbWI9uloiJ1x68FVm_tjZXkMnLXSYy9PhyWPutO3b-JNVuSVYTvcBNWcmj7GPGEHWP-LntAG1KDpnbvqqQGPXPU6XJ_lQFU29JrxOt3N9rOjYUH1nC2SQQy_tewmzY_0OOVz4hxHKhMAVQzlqOGDqD2quyAf0opwv_LhjIVjkSeRKPUkPzy56a6SsrnC4nolOUMBLHbKLm32EElxUiOu6ecNs7-XFA"/>
+</div>
+<span class="text-sm font-bold text-white">tomo</span>
+</div>
+<span class="bg-zinc-800/80 backdrop-blur text-xs px-2 py-1 rounded-full border border-zinc-700 font-mono text-zinc-300">12:41</span>
+</div>
+<div class="flex-grow relative mx-2 mb-2 rounded-3xl overflow-hidden border border-zinc-800">
+<img alt="Meal snap" class="w-full h-full object-cover grayscale-[20%] contrast-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhkIpvviqVteVvUmDuEhozehH7BU6A2q_8jf77b56ecaI3ezIzy453b_vyGCAgZDeJTNN2ZYdxVoSP220JrgR0tMOLVsNaOHqfWosvK4reOPdPTWhTXIjbfOVLegmWxRvuSxez0kP44KbTwwSGDolIAiI0yd7GyYORHaCzVD0yVznxTJ0dvG4oCt2_hcqOaeARY_CJCnEgWoWzE8Axb8VbncAn7KhOouFa0cgB36uEYJLlkcFGmskhNfRrgztDMzYpb73gL2t4Vjg"/>
+<div class="absolute top-4 right-4 bg-black/70 backdrop-blur-md border border-white/10 px-4 py-2 rounded-xl flex flex-col items-end">
+<p class="text-sm font-black font-mono text-primary tracking-tighter">P:42g C:58g F:9g</p>
+<p class="text-[10px] text-zinc-300 uppercase tracking-wide font-bold">Salmon Poke</p>
+</div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%]">
+<div class="bg-zinc-900/90 backdrop-blur-xl border border-secondary/50 p-4 rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.8)] animate-[bounce_3s_infinite]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-xl">group</span>
+</div>
+<div>
+<p class="text-white text-sm font-bold">Squad verified your meal! 🔥</p>
+<p class="text-xs text-zinc-400">Streak extended: 14 days</p>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-0 w-full bg-gradient-to-t from-black via-black/60 to-transparent p-6 pt-20">
+<div class="flex justify-between items-end">
+<div>
+<h3 class="text-white font-bold text-lg">Lunch Break</h3>
+<p class="text-zinc-400 text-xs">2 min ago • London, UK</p>
+</div>
+<div class="flex -space-x-3">
+<img alt="Friend 1" class="w-10 h-10 rounded-full border-2 border-black" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOusDNpfmSYYj--HY2NvfaLOTo4lswwq9EbIMsR1JAHvmATUD9lghcjNSIUcwJ72GvEfffXYhkbXAeaUlewOBmUhXlBhmsR_t8rFkXWC8U2rloWrpB8-PURK75rRelrqMzOIPDi1YNfqCEF6erczVSHi9Z8aqvWU_UDLUJ83mZRDK2k2fqwGUJjak6W6KiM6xItmv2RxqegST-52noFpYs3KWbFq0NIDi6JaXfYWcaERmewZZPImeEpJkOq6hks1mk3sWqGzUIG70"/>
+<img alt="Friend 2" class="w-10 h-10 rounded-full border-2 border-black" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCol_pzBtriZGVTFoX-OeAmvRsEbYcpdL2dxH-iHNpC6N5yxcV1ywczs37zorenOjTrUgJrvkJ0AFrVHzPrOXiuwUzB42x85CTL6pYLOc48DYnVgFuATyJ9XxCn12hWGCGTN22sa4HTdJhobedMeq8hQDNxja6shfJEWZcc9n_ZZuK4UarPEFgFE_rVRiwbUu2XZNAPAe7Qg8fw9I9IBw4x79ZOiIicoHFrlwqPLKaeW2rqyvbo7bhdqwYcZKz6lrp3NjPTAfHVfuI"/>
+<div class="w-10 h-10 rounded-full border-2 border-black bg-zinc-800 flex items-center justify-center text-xs font-bold text-white">+8</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="py-24 bg-zinc-950/50 border-y border-white/5 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/3 h-full bg-primary/5 blur-[150px] pointer-events-none"></div>
+<div class="max-w-[1400px] mx-auto px-6 relative z-10">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div>
+<h2 class="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter mb-4">
+                    How It Works
+                </h2>
+<p class="text-zinc-400 max-w-lg text-lg">
+                    Accountability isn't a feature. It's the whole point. Here is how you survive the squad.
+                </p>
+</div>
+<div class="hidden md:block w-32 h-1 bg-primary rounded-full"></div>
+</div>
+<div class="grid lg:grid-cols-3 gap-8">
+<div class="group relative bg-black border-2 border-zinc-800 hover:border-primary transition-colors duration-300 p-8 rounded-3xl overflow-hidden h-full flex flex-col justify-between">
+<div class="absolute -right-4 -top-4 text-zinc-900 font-black text-9xl select-none group-hover:text-zinc-800 transition-colors">01</div>
+<div class="relative z-10">
+<div class="w-16 h-16 rounded-2xl bg-zinc-900 border border-zinc-700 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 group-hover:border-primary group-hover:bg-primary/10">
+<span class="material-symbols-outlined text-4xl text-white group-hover:text-primary transition-colors">photo_camera</span>
+</div>
+<h3 class="text-2xl font-bold text-white mb-4 uppercase tracking-tight">Snap &amp; Log</h3>
+<p class="text-zinc-400 leading-relaxed text-lg">
+                        Capture your meal or workout. Choose <span class="text-white font-semibold">Casual</span> (just a photo) or <span class="text-white font-semibold">Tryhard</span> (full macro breakdown).
+                    </p>
+</div>
+<div class="w-full h-1 bg-zinc-800 mt-8 group-hover:bg-primary transition-colors duration-300"></div>
+</div>
+<div class="group relative bg-black border-2 border-zinc-800 hover:border-secondary transition-colors duration-300 p-8 rounded-3xl overflow-hidden h-full flex flex-col justify-between">
+<div class="absolute -right-4 -top-4 text-zinc-900 font-black text-9xl select-none group-hover:text-zinc-800 transition-colors">02</div>
+<div class="relative z-10">
+<div class="w-16 h-16 rounded-2xl bg-zinc-900 border border-zinc-700 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 group-hover:border-secondary group-hover:bg-secondary/10">
+<span class="material-symbols-outlined text-4xl text-white group-hover:text-secondary transition-colors">check_circle</span>
+</div>
+<h3 class="text-2xl font-bold text-white mb-4 uppercase tracking-tight">The Squad Verifies</h3>
+<p class="text-zinc-400 leading-relaxed text-lg">
+                        Your 6 closest friends get a ping. They have 12 hours to call out your BS or validate your grind.
+                    </p>
+</div>
+<div class="w-full h-1 bg-zinc-800 mt-8 group-hover:bg-secondary transition-colors duration-300"></div>
+</div>
+<div class="group relative bg-black border-2 border-zinc-800 hover:border-primary transition-colors duration-300 p-8 rounded-3xl overflow-hidden h-full flex flex-col justify-between">
+<div class="absolute -right-4 -top-4 text-zinc-900 font-black text-9xl select-none group-hover:text-zinc-800 transition-colors">03</div>
+<div class="relative z-10">
+<div class="w-16 h-16 rounded-2xl bg-zinc-900 border border-zinc-700 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 group-hover:border-primary group-hover:bg-primary/10">
+<span class="material-symbols-outlined text-4xl text-white group-hover:text-primary transition-colors">local_fire_department</span>
+</div>
+<h3 class="text-2xl font-bold text-white mb-4 uppercase tracking-tight">Fuel the Streak</h3>
+<p class="text-zinc-400 leading-relaxed text-lg">
+                        Everyone stays on track, everyone keeps the streak. Break the chain, and the whole squad knows.
+                    </p>
+</div>
+<div class="w-full h-1 bg-zinc-800 mt-8 group-hover:bg-primary transition-colors duration-300"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full h-[600px] relative bg-zinc-900 overflow-hidden group">
+<div class="absolute inset-0 bg-black/40 z-10 group-hover:bg-black/20 transition-colors duration-700"></div>
+<img alt="Gym Entrance" class="w-full h-full object-cover grayscale opacity-80 group-hover:scale-105 transition-transform duration-1000 ease-in-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkh3nMBOxcpOnB3cFGAVer2O8Go2DwYZG0GA2HBouBT_lhwy0lopdKQN-Ey0L7HSpuYyJzYufx2mjRIBaaA51M20s6Tyi7sGXtoG3e2i70Kw9x-VAY17lFF9t-g0Up8Mwd3fTqMSdJa61FDF50eLmOiYKUn5MDP2r1cpSEvEdNR94MP2ON_26Y11CLmm2JR51bbLLPRehoIc7H9o13bykSIpaBdPf2HMz9m4VVZz2SmsYfg10tM49Xb7CHEEzm2ZpLcg15X8Sj5YY"/>
+<div class="absolute inset-0 z-20 flex items-center justify-center">
+<div class="bg-black/60 backdrop-blur-xl border border-primary/30 p-8 rounded-3xl max-w-md w-full mx-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+<div class="flex items-start justify-between mb-6">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="w-3 h-3 rounded-full bg-primary animate-pulse"></span>
+<span class="text-primary font-bold tracking-wider uppercase text-xs">Live Status</span>
+</div>
+<h3 class="text-3xl font-black text-white uppercase italic">Gym Check-in</h3>
+</div>
+<div class="bg-primary/20 p-3 rounded-full border border-primary/50">
+<span class="material-symbols-outlined text-primary text-2xl">location_on</span>
+</div>
+</div>
+<div class="bg-zinc-900/80 rounded-xl p-4 mb-4 border border-zinc-700 flex items-center gap-4">
+<div class="w-16 h-16 bg-zinc-800 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgPO377PeVV0bkW78r7tl68i88MZv60EI1alUSuKzgPef_C6UMUmZeyr2tgcGCWjBeNEuj2RbfjOn9bU0lpGIfgeXJNbTjDJ_d3-bZbxW4ZSLZ9lqWT1MzVpD0bGa8Dj7QS5Mn36eGN35KjPR2nEUflu7V72tyXq4B7f7OJ491wsJYB-o1aniareVE0NqAspYD62t4_VYV37ppfv9--k97NwUtMz5ORnFtoZ2zXC6GcIkK-zeGojUjXuz_llEW1iF7Y-sKTlGWl4w"/>
+</div>
+<div>
+<h4 class="text-white font-bold">Iron Paradise Gym</h4>
+<p class="text-zinc-400 text-sm">124 Venice Blvd, CA</p>
+<div class="flex items-center gap-1 text-primary text-xs mt-1 font-mono">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+                        GPS VERIFIED
+                    </div>
+</div>
+</div>
+<button class="w-full bg-white hover:bg-zinc-200 text-black font-extrabold uppercase py-4 rounded-xl transition-colors flex items-center justify-center gap-2 group-hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                Start Session
+                <span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-[1400px] mx-auto px-6">
+<div class="py-24">
+<div class="flex justify-between items-end mb-12">
+<h2 class="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter">
+                            The Toolkit
+                        </h2>
+<div class="hidden md:block w-32 h-1 bg-zinc-800 rounded-full"></div>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="group bg-surface-dark border border-zinc-800 hover:border-zinc-600 p-8 rounded-3xl transition-all duration-300 flex flex-col h-full card-hover">
+<div class="w-14 h-14 bg-black rounded-2xl flex items-center justify-center mb-8 border border-zinc-800 group-hover:border-primary text-primary transition-colors">
+<span class="material-symbols-outlined text-3xl">photo_camera</span>
+</div>
+<h3 class="text-2xl font-bold text-white mb-3">Dual-Mode Tracking</h3>
+<p class="text-zinc-400 text-base leading-relaxed">
+                                Switch between 'Casual' for vibes and 'Tryhard' for precision. Verified macros or just a quick pic—you decide the intensity.
+                            </p>
+</div>
+<div class="group bg-surface-dark border border-zinc-800 hover:border-zinc-600 p-8 rounded-3xl transition-all duration-300 flex flex-col h-full card-hover">
+<div class="w-14 h-14 bg-black rounded-2xl flex items-center justify-center mb-8 border border-zinc-800 group-hover:border-primary text-primary transition-colors">
+<span class="material-symbols-outlined text-3xl">local_fire_department</span>
+</div>
+<h3 class="text-2xl font-bold text-white mb-3">Live Streak Board</h3>
+<p class="text-zinc-400 text-base leading-relaxed">
+                                Real-time status updates for the whole squad. See who's putting in the work and who's slacking off. Keep the group flame lit.
+                            </p>
+</div>
+<div class="group bg-surface-dark border border-zinc-800 hover:border-zinc-600 p-8 rounded-3xl transition-all duration-300 flex flex-col h-full card-hover">
+<div class="w-14 h-14 bg-black rounded-2xl flex items-center justify-center mb-8 border border-zinc-800 group-hover:border-secondary text-secondary transition-colors">
+<span class="material-symbols-outlined text-3xl">notifications_active</span>
+</div>
+<h3 class="text-2xl font-bold text-white mb-3">Social Nudges</h3>
+<p class="text-zinc-400 text-base leading-relaxed">
+                                Send custom push notifications to motivate your friends or troll them when they miss a workout. Brutal honesty is key.
+                            </p>
+</div>
+<div class="group bg-surface-dark border border-zinc-800 hover:border-zinc-600 p-8 rounded-3xl transition-all duration-300 flex flex-col h-full card-hover lg:col-span-2">
+<div class="flex flex-col md:flex-row gap-6 items-start md:items-center">
+<div class="w-14 h-14 bg-black rounded-2xl flex items-center justify-center border border-zinc-800 group-hover:border-primary text-primary transition-colors flex-shrink-0">
+<span class="material-symbols-outlined text-3xl">check_circle</span>
+</div>
+<div>
+<h3 class="text-2xl font-bold text-white mb-2">One-Tap Validation</h3>
+<p class="text-zinc-400 text-base leading-relaxed max-w-xl">
+                                        Instant friend verification. No algorithms, just human eyes. Your squad confirms if that salad is actually healthy or if you're cheating.
+                                    </p>
+</div>
+</div>
+</div>
+<div class="group bg-surface-dark border border-zinc-800 hover:border-zinc-600 p-8 rounded-3xl transition-all duration-300 flex flex-col h-full card-hover justify-center">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-14 h-14 bg-black rounded-2xl flex items-center justify-center border border-zinc-800 group-hover:border-zinc-500 text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">monitor_heart</span>
+</div>
+<h3 class="text-2xl font-bold text-white">Health Sync</h3>
+</div>
+<p class="text-zinc-400 text-base leading-relaxed">
+                                Seamless integration with Apple Health &amp; Google Fit.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</div></main>
+<footer class="border-t border-zinc-900 py-12 bg-black">
+<div class="max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary text-lg">bolt</span>
+<span class="text-white text-lg font-bold tracking-tight lowercase">tomo</span>
+</div>
+<div class="flex gap-8 text-sm font-medium text-zinc-500">
+<a class="hover:text-white transition-colors" href="#">Terms</a>
+<a class="hover:text-white transition-colors" href="#">Privacy</a>
+<a class="hover:text-white transition-colors" href="#">Support</a>
+</div>
+<p class="text-zinc-600 text-xs font-mono">
+                    Copyright 2026 Jiyuu Software.
+                </p>
+</div>
+</footer>
+</div>
+<script>
+(function () {
+  // ── CONFIG ──────────────────────────────────────────────────
+  // Replace with your Formspree endpoint after creating a form
+  // at https://formspree.io  (free tier = 50 submissions/month)
+  const FORMSPREE_URL = 'https://formspree.io/f/mykdpvaz';
+  // ────────────────────────────────────────────────────────────
+
+  const form     = document.getElementById('waitlist-form');
+  const email    = document.getElementById('waitlist-email');
+  const btn      = document.getElementById('waitlist-submit');
+  const feedback = document.getElementById('waitlist-feedback');
+
+  function showFeedback(msg, isError) {
+    feedback.textContent = msg;
+    feedback.className = 'mt-4 text-sm font-medium ' +
+      (isError ? 'text-red-400' : 'text-primary');
+    feedback.classList.remove('hidden');
+  }
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const value = email.value.trim();
+    if (!value) return;
+
+    // Disable while in-flight
+    btn.disabled = true;
+    btn.classList.add('opacity-50', 'pointer-events-none');
+    btn.querySelector('span').textContent = 'hourglass_top';
+
+    try {
+      const res = await fetch(FORMSPREE_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ email: value }),
+      });
+
+      if (!res.ok) throw new Error('Network response was not ok');
+
+      // Success — replace form with confirmation
+      form.innerHTML =
+        '<p class="text-primary text-xl font-bold flex items-center gap-2">' +
+        '<span class="material-symbols-outlined">check_circle</span>' +
+        'You\'re in! We\'ll be in touch 🎉</p>';
+      feedback.classList.add('hidden');
+    } catch (err) {
+      showFeedback('Something went wrong — please try again.', true);
+      btn.disabled = false;
+      btn.classList.remove('opacity-50', 'pointer-events-none');
+      btn.querySelector('span').textContent = 'arrow_forward';
+      console.error('Waitlist submission error', err);
+    }
+  });
+
+  // Smooth-scroll for header CTA
+  document.querySelectorAll('a[href="#waitlist-form"]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      email.focus({ preventScroll: true });
+    });
+  });
+})();
+</script>
+</body></html>
